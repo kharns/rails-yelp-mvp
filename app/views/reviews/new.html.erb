@@ -1,0 +1,11 @@
+<%# NEW REVIEW %>
+<h1>New Review</h1>
+<h2><%= @restaurant.name %></h2>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5]%>
+  <%= f.submit %>
+  <% end %>
+
+  <%= link_to "back to restaurants", restaurants_path, class: "btn btn-primary mt-4" %>
